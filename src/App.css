@@ -1,38 +1,898 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body{
+    font-family: 'Poppins', sans-serif;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+::-webkit-scrollbar{
+    display: none;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.no-page{
+   width: 100%;
+   height: 100vh;
+   display: flex;
+   justify-content: flex-start;
+   align-items: center;
+   flex-direction: column;
+}
+
+.no-page h1{
+   letter-spacing: 1px;
+   font-weight: 500;
+   margin-top: 100px;
+}
+
+.no-page button{
+   padding: 12px 20px;
+   letter-spacing: 2px;
+   font-size: 18px;
+   font-weight: bold;
+   border: none;
+   outline: none;
+   border-radius: 4px;
+   margin-top: 30px;
+   background-color: #fa4700;
+   cursor: pointer;
+}
+
+.no-page button:hover{
+   box-shadow: 5px 5px 10px black;
+}
+
+/** Student Dashboard */
+.student-dashboard{
+  width: 100%;
+  height: 100%;
+  padding-bottom: 40px;
+}
+.student-dashboard > .heading{
+  width: 100%;
+    position: fixed;
+    top: 0;
+    padding: 14px;
+    background-color: #1f1e1e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.heading > h1{
+  color: crimson;
+  letter-spacing: 1px;
+  font-weight: 500;
+}
+.teacher-dashboard{
+  position: fixed;
+  right: 10px;
+  padding: 10px;
+  font-size: 20px;
+  letter-spacing: 1px;
+  font-weight: 500;
+  color: rgb(255, 60, 0);
+  cursor: pointer;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  gap: 10px; 
+}
+.teacher-dashboard:hover{
+   color: #bebdbd;
+}
+.student-create-user{
+  position: fixed;
+  left: 10px;
+  padding: 10px;
+  font-size: 20px;
+  letter-spacing: 1px;
+  font-weight: 500;
+  color: rgb(255, 60, 0);
+  cursor: pointer;
+}
+.student-create-user:hover{
+   color: #bebdbd;
+}
+.student-card{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 60px;
+}
+.student-card > .student-main-card{
+  min-width: 540px;
+  height: 500px;
+  background-color: #1f1e1e;
+  box-sizing: border-box;
+  border-radius: 5px;
+  margin-top: 50px;
+  box-shadow: 10px 10px 24px;
+}
+.student-main-card > h1{
+  text-align: justify;
+  padding: 10px;
+  font-size: 38px;
+  letter-spacing: 2px;
+  padding-right: 20px;
+  font-weight: 500; 
+  margin-top: 10px;
+  margin-left: 20px;
+  color: rgb(255, 60, 0);
+}
+.student-main-card > p{
+  margin-left: 20px;
+    font-size: 18px;
+    letter-spacing: 1px;
+    font-weight: 500;
+    text-align: justify;
+    padding: 5px 24px;
+    margin-bottom: 10px;
+  color: rgb(168, 168, 168);
+}
+.student-flex-box{
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  box-sizing: border-box;
+  width: 100%;
+  height: 300px;
+  padding: 0 20px;
+}
+.mark{
+  width: 100%;
+  height: 100%;
+   border-radius: 5px;
+}
+.mark > h3{
+   font-size: 23px;
+   letter-spacing: 1px;
+   font-weight: 500;
+   padding: 10px;
+   margin-top: 10px;
+  color: rgb(255, 60, 0);
+}
+.mark > p{
+   font-size: 18px;
+   letter-spacing: 1px;
+   font-weight: 500;
+   margin-top: 11px;
+   margin-left: 24px;
+  color: rgb(168, 168, 168);
+}
+.student-btns{
+   width: 50%;
+   height: 100%;
+   display: flex;
+   justify-content: center;
+   flex-direction: column;
+   align-items: center;
+   box-sizing: border-box;
+}
+.student-btns > button{
+  display: block;
+  width: 80%;
+  font-size: 17px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  padding: 10px;
+  margin-top: 20px;
+  border: none;
+  outline: none;
+  border-radius: 4px;
+  background-color: rgba(255, 0, 106, 0.836);
+  cursor: pointer;
+  color: rgba(219, 218, 218, 0.904);
+}
+.student-btns > .student-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.student-btns > .student-btn > span{
+   font-size: 22px;
+}
+.student-btns > .student-btn:hover{
+    box-shadow: 5px 5px 10px;
+    color: black;
+  transition: all 0.2s ease-in;
+
 }
 
-.App-link {
-  color: #61dafb;
+
+/** Create a User */
+.studennt-create-user{
+  width: 100%;
+  height: 100vh;
+  background-color: rgb(39, 39, 39);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+nav{
+   position: fixed;
+   top: 0;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   padding: 10px;
+}
+nav > h1{
+   font-size: 30px;
+   color: rgb(225, 0, 255);
+   letter-spacing: 2px;
+   font-weight: 600;
+   padding: 5px;
+}
+nav > .student-details{
+   position: fixed;
+   left: 20px;
+   padding: 10px;
+   font-size: 20px;
+   letter-spacing: 2px;
+   font-weight: bold;
+   color: rgb(255, 51, 0);
+   cursor: pointer;
+}
+.form{
+   width: 500px;
+   height: 540px;
+   background-color: rgba(255, 255, 255, 0.877);
+   box-sizing: border-box;
+   padding: 20px;
+   border-radius: 5px;
+   margin-top: 30px;
+   box-shadow: 10px 10px 20px;
+}
+.form > .input-filed{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.form > .input-filed > input{
+    display: block;
+    padding: 10px 10px 5px;
+    font-size: 15px;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    width: 80%;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    border-bottom: 1px solid rgb(212, 0, 255);
+}
+.form > .input-filed > input::placeholder{
+    color: black;
+}
+.create-student-user{
+  margin-top: 17px;
+  padding: 12px;
+  width: 200px;
+  border: none;
+  outline: none;
+  background-color: rgb(225, 0, 255);
+  border-radius: 4px;
+  font-size: 18px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  cursor: pointer;
+  color: rgb(255, 255, 255);
+}
+.create-student-user:hover{
+   box-shadow: 6px 6px 14px black;
+   color: black;
+  transition: all 0.2s ease-in;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+
+/** User Profile */
+.user-profile{
+   width: 100%;
+   height: 100vh;
+   background-color: rgb(41, 41, 41);
+   display: flex;
+   justify-content: flex-start;
+   align-items: center;
+   flex-direction: column;
+}
+.user-profile > h1{
+   text-align: center;
+   padding: 20px;
+   color: rgb(255, 60, 0);
+   letter-spacing: 2px;
+   font-weight: 500;
+}
+.user-profile-card{
+   min-width: 520px;
+   height: 510px;
+   background-color: #fff;
+   border-radius: 5px;
+   margin-top: 10px;
+   background-color: rgb(32, 32, 32);
+   box-sizing: border-box;
+   box-shadow: 10px 10px 20px;
+}
+.user-profile-card > h1{
+   text-align: justify;
+   padding: 20px 20px 10px;
+   margin-left: 20px;
+   margin-right: 20px;
+   font-size: 38px;
+   letter-spacing: 3px;
+   color: rgb(255, 60, 0);
+   font-weight: 500;
+}
+.user-profile-card > p{
+    padding: 5px 20px;
+    margin-left: 50px;
+    color: rgb(158, 157, 157);
+}
+.user-profile-card > .user-mark{
+    padding: 10px 20px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+.user-mark > h3{
+   font-size: 20px;
+   margin-left: 10px;
+   margin-bottom: 5px;
+   letter-spacing: 2px;
+   color: rgb(255, 60, 0);
+   font-weight: 500;
+}
+.user-mark > p{
+   margin-left: 60px;
+   margin-top: 10px;
+   margin-bottom: 4px;
+   font-size: 17px;
+   letter-spacing: 1px;
+   font-weight: 500;
+   color: rgb(158, 157, 157);
+}
+.user-profile-dashboard{
+   padding: 10px;
+   margin-left: 40px;
+   margin-top: 10px;
+   border: none;
+   outline: none;
+   border-radius: 5px;
+   letter-spacing: 2px;
+   font-size: 18px;
+   font-weight: bold;
+   width: 200px;
+   background-color: rgba(245, 1, 115, 0.918);
+   color: rgb(206, 205, 205);
+   cursor: pointer;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+.user-profile-dashboard > span{
+   font-size: 20px;
+   margin-right: 6px; 
+}
+.user-profile-dashboard:hover{
+  color: black;
+  box-shadow: 5px 5px 10px;
+  transition: all 0.2s ease-in;
+}
+
+
+
+/** Edit User */
+.edit-user{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgb(51, 51, 51);
+}
+.edit-user > h1{
+   padding: 10px;
+   letter-spacing: 2px;
+   font-weight: 500;
+   margin-top: 6px;
+   margin-bottom: 6px;
+   color: orangered;
+}
+.from{
+    width: 580px;
+    height: 520px;
+    box-sizing: border-box;
+    padding: 23px 20px;
+    background-color: rgb(41, 41, 41);
+    border-radius: 5px;
+    box-shadow: 10px 10px 20px;
+}
+.from > .input-student-name{
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 20px;
+}
+.from > .input-student-name > input{
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px 10px 5px;
+    border: none;
+    outline: none;
+    margin-bottom: 16px;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    border-bottom: 1px solid rgb(255, 0, 179);
+    background-color: transparent;
+    color: #d6d3d3;
+}
+.from > .input-student-mark{
+    width: 100%;
+    height: 200px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+    padding: 0px 20px;
+}
+.from > .input-student-mark > .input-student-flex-1 > input{
+  box-sizing: border-box;
+   width: 100%;
+   padding: 10px 10px 5px;
+   border: none;
+   outline: none;
+   margin-top: 20px;
+   background-color: transparent;
+   border-bottom: 1px solid rgb(255, 0, 179);
+   font-size: 18px;
+   font-weight: 500;
+   color: #d6d3d3;
+}
+.from > .input-student-mark > .input-student-flex-2 > input{
+  box-sizing: border-box;
+   width: 100%;
+   padding: 10px 10px 5px;
+   border: none;
+   outline: none;
+   margin-top: 20px;
+   background-color: transparent;
+   border-bottom: 1px solid rgb(255, 0, 179);
+   font-size: 18px;
+   font-weight: 500;
+   color: #d6d3d3;
+}
+.edit-user-btn{
+    width: 160px;
+    font-size: 17px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    padding: 10px;
+    border: none;
+    outline: none;
+    margin-top: 10px;
+    margin-left: 20px;
+    cursor: pointer;
+    border-radius: 4px;
+    background-color: rgb(245, 6, 145);
+    color: #d6d3d3;
+}
+.edit-user-btn:hover{
+   color: black;
+   box-shadow: 5px 5px 10px;
+   transition: all 0.2s ease-in;
+}
+
+
+/** Teacher Details */
+.teacher-details{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.teacher-heading{
+   background-color: rgb(31, 30, 30);
+   width: 100%;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 13px 10px;
+   box-sizing: border-box;
+   position: fixed;
+   top: 0;
+}
+.teacher-heading > h4{
+    font-size: 20px;
+    letter-spacing: 1px;
+    color: rgb(187, 186, 185);
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+.teacher-heading > h4:hover{
+   color: rgb(255, 72, 0);
+}
+.teacher-heading > h3{
+    font-size: 19px;
+    letter-spacing: 1px;
+    color: rgb(187, 186, 185);
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+}
+.teacher-heading > h3:hover{
+   color: rgb(255, 72, 0);
+}
+.teacher-heading > h1{
+     font-size: 34px;
+     letter-spacing: 2px;
+     font-weight: 500;
+     color: rgb(255, 60, 0);
+}
+.teacher-card{
+   width: 100%;
+   height: 100%;
+   padding-top: 10px;
+   padding-bottom: 50px;
+   box-sizing: border-box;
+   display: flex;
+   justify-content: space-evenly;
+   flex-wrap: wrap;
+   align-items: center;
+   margin-top: 60px;
+}
+.teacher-main-card{
+   min-width: 520px;
+   max-height: 400px;
+   box-sizing: border-box;
+   background-color: #1b1b1b;
+   border-radius: 5px;
+   margin-top: 40px;
+   box-shadow: 10px 10px 20px;
+   padding-bottom: 20px;
+}
+.teacher-main-card > h1{
+    padding: 10px;
+    margin-top: 20px;
+    margin-left: 30px;
+    margin-right: 20px;
+    letter-spacing: 2px;
+    font-size: 34px;
+    font-weight: 400;
+    color: rgb(255, 60, 0);
+}
+.teacher-main-card > p{
+    margin-left: 60px;
+    font-size: 19px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    margin-top: 5px;
+    color: rgb(189, 187, 187);
+}
+.teacher-contact{
+    padding: 10px 40px;
+    margin-top: 10px; 
+}
+.teacher-contact > h3{
+    font-size: 21px;
+    letter-spacing: 1px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    color: rgb(255, 60, 0);
+    font-weight: 400;
+}
+.teacher-contact > p{
+   font-size: 18px;
+   font-weight: 500;
+   margin-top: 16px;
+   margin-left: 20px;
+   color: rgb(189, 187, 187);
+}
+.teacher-bts{
+   display: flex;
+   justify-content: space-around;
+   box-sizing: border-box;
+   padding: 20px;
+   margin-top: 10px;
+}
+.teacher-bts > .teacher-btn{
+   width: 140px;
+   padding: 16px;
+   border: none;
+   outline: none;
+   font-size: 18px;
+   letter-spacing: 3px;
+   font-weight: bold;
+   border-radius: 4px;
+   cursor: pointer;
+   background-color: rgb(255, 60, 0);
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+   align-items: center;
+   gap: 10px;
+}
+.teacher-bts > .teacher-btn:hover{
+   box-shadow: 5px 5px 10px black;
+   transition: all 0.2s ease-in;
+   color:  rgb(189, 187, 187);
+}
+
+
+/** Create A Teacher */
+.create-a-teacher{
+   width: 100%;
+   height: 100vh;
+   background-color: #292929;
+   display: flex;
+   justify-content: flex-start;
+   align-items: center;
+   flex-direction: column;
+}
+.create-a-teacher > h1{
+   text-align: center;
+   color: rgb(255, 60, 0);
+   padding: 14px;
+   letter-spacing: 2px;
+   font-weight: 500;
+   margin-top: 10px;
+   margin-bottom: 14px;
+   font-size: 38px;
+}
+.create-a-teacher > .from{
+   width: 500px;
+   height: 500px;
+   padding: 23px 40px;
+   display: flex;
+   justify-content: flex-start;
+   align-items: center;
+   flex-direction: column;
+}
+.create-a-teacher > .from > input{
+     display: block;
+     box-sizing: border-box;
+     width: 100%;
+     padding: 10px 10px 5px;
+     margin-bottom: 30px;
+     background-color: transparent;
+     border: none;
+     outline: none;
+     border-bottom: 1px solid rgb(255, 72, 0);
+     color: #bebdbd;
+     font-size: 17px;
+     letter-spacing: 1px;
+}
+.create-a-teacher > .from > input::placeholder{
+   color: #bebdbd;
+}
+.add-teacher{
+    margin-top: 18px;
+    width: 240px;
+    padding: 12px;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    letter-spacing: 2px;
+    font-weight: bold;
+    border-radius: 4px;
+    background-color: rgb(255, 60, 0);
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.add-teacher > span{
+   font-size: 20px;
+}
+.add-teacher:hover{
+   color: rgb(184, 183, 183);
+   box-shadow: 5px 5px 10px black;
+   transition: all 0.2s ease-in;
+}
+.from > .teacher-details{
+    font-size: 19px;
+    letter-spacing: 4px;
+    margin-top: 13px;
+    font-weight: 500;
+    color: #d6d3d3;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}
+.from > .teacher-details:hover{
+    color: rgb(255, 60, 0);
+}
+
+
+/** Teacher Profile */
+.teacher-profile{
+    width: 100%;
+    height: 100vh;
+    background-color: #292929;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+}
+.teacher-profile > h1{
+   color: rgb(255, 72, 0);
+   letter-spacing: 3px;
+   font-weight: 400;
+   padding: 10px;
+   margin-top: 14px;
+   margin-bottom: 40px;
+   font-size: 34px;
+}
+.teacher-profile-card{
+   min-width: 500px;
+   min-height: 360px;
+   background-color: #1b1b1b;
+   border-radius: 5px;
+   box-sizing: border-box;
+   padding: 20px;
+   box-shadow: 10px 10px 20px;
+}
+.teacher-profile-card > h1{
+     padding: 10px 20px;
+     color: rgb(255, 72, 0);
+     font-size: 34px;
+     letter-spacing: 1px;
+     font-weight: 400;
+}
+.teacher-profile-card > p{
+    color: #d6d3d3;
+    font-size: 18px;
+    margin-left: 50px;
+    font-weight: 400;
+    margin-top: 4px;
+    letter-spacing: 2px;
+}
+.teacher-profile-card > .teacher-profile-contact{
+    padding: 10px;
+    margin-top: 10px;
+} 
+.teacher-profile-card > .teacher-profile-contact > h3{
+     font-size: 20px;
+     letter-spacing: 2px;
+     font-weight: 400;
+     padding: 10px;
+     color: rgb(255, 72, 0);
+}
+.teacher-profile-card > .teacher-profile-contact > p{
+    margin-left: 40px;
+    margin-top: 10px;
+    font-size: 17px;
+    letter-spacing: 1px;
+    font-weight: 400;
+    color: #d6d3d3;
+}
+.teacher-profile-back-btn > h3{
+   display: inline-block;
+   letter-spacing: 2px;
+   font-weight: 400;
+   margin-top: 20px;
+   cursor: pointer;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   color: #d6d3d3;
+   text-decoration: underline;
+   text-underline-offset: 5px;
+}
+.teacher-profile-back-btn > h3:hover{
+   color: rgb(255, 72, 0);
+}
+.teacher-profile-back-btn > h3 > span{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin-right: 10px;
+   font-size: 22px;
+}
+
+/** Edit Teacher User*/
+.edit-a-teacher-profile{
+   width: 100%;
+   height: 100vh;
+   background-color: #292929;
+   display: flex;
+   justify-content: flex-start;
+   align-items: center;
+   flex-direction: column;
+}
+.edit-a-teacher-profile > h1{
+    padding: 10px;
+    color: #fa4700;
+    margin-top: 18px;
+    margin-bottom: 36px;
+    letter-spacing: 3px;
+    font-weight: 400;
+}
+.edit-teacher-from{
+    width: 500px;
+    height: 400px;
+    background-color: #1b1b1b;
+    box-sizing: border-box;
+    padding: 10px 40px;
+    box-shadow: 10px 10px 20px;
+}
+.edit-teacher-from > input{
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px 10px 5px;
+    margin-top: 14px;
+    margin-bottom: 24px;
+    font-size: 16px;
+    letter-spacing: 1px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid rgb(255, 72, 0);
+   color: #bbbbbb;
+}
+.edit-teacher-from > input::placeholder{
+   color: #c4c2c2;
+   letter-spacing: 2px;
+}
+.edit-teacher-profile{
+   padding: 10px;
+   width: 140px;
+   letter-spacing: 2px;
+   border: none;
+   outline: none;
+   border-radius: 4px;
+   margin-top: 30px;
+   font-size: 18px;
+   font-weight: bold;
+   background-color: rgb(255, 72, 0);
+   cursor: pointer;
+   margin-left: 2px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   gap: 10px;
+}
+.edit-teacher-profile:hover{
+   color: #b8b8b8;
+    box-shadow: 5px 5px 10px black;
+}
+.edit-teacher-profile > span{
+    font-size: 20px;
+}
+.edit-teacher-from > h3{
+   position: fixed;
+   left: 40px;
+   top: 26px;
+   font-size: 21px;
+   color: #bbbbbb;
+   letter-spacing: 3px;
+   font-weight: 400;
+   cursor: pointer;
+}
+.edit-teacher-from > h3 > span{
+   margin-right: 10px;
+}
+.edit-teacher-from > h3:hover{
+   color: rgb(255, 72, 0);
 }
